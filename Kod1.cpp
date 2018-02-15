@@ -36,4 +36,5 @@
       return 0;
   }
 /**
+http://abit.ifmo.ru/file/pages/74/Raspisanie_VI_2018.pdf
 */
