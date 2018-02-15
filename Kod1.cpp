@@ -19,11 +19,20 @@
       }
       return ans;
   }
-  vector< pair< int, int > > vrr;
   int main()
   {
-      vrr.push_back(make_pair(5, 8));
-      vrr.push_back({13, 45});
+      int n, mLen;
+      vector< string > arr, brr;
+      cin >> n >> mLen;
+      for(int i = 1; i <= n; i++){
+        string s;
+        cin >> s;
+        arr.push_back(s);
+      }
+      brr = PalindromFilter(arr, mLen);
+      for(int i = 0; i < sz(brr); i++){
+        cout << brr[i] << " ";
+      }
       return 0;
   }
 /**
