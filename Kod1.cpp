@@ -15,8 +15,8 @@
       vector< string > brr, crr;
 
 
-
-
+      word - brr;
+    
       crr = isPalindrom(brr, 6);
       return 0;
   }
