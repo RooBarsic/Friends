@@ -1,22 +1,23 @@
 # include <bits/stdc++.h>
 # define sz(s) int(s.size())
   using namespace std;
-  vector< string > isPalindrom(vector< string > word, int minLength)
+  bool isPalindrom(string s;)
   {
-      vector< string > arr;
-
-
-
-
-      return arr;
+      int le = 0, ri = sz(s) - 1;
+      while(le < ri){
+        if(s[le] != s[ri]) return 0;
+        le++;
+        ri--;
+      }
+      return 1;
   }
   int main()
   {
       vector< string > brr, crr;
 
 
-      word = brr;
-    
+
+
       crr = isPalindrom(brr, 6);
       return 0;
   }
