@@ -19,14 +19,11 @@
       }
       return ans;
   }
+  vector< pair< int, int > > vrr;
   int main()
   {
-      vector< string > brr, crr;
-
-
-
-
-      crr = isPalindrom(brr, 6);
+      vrr.push_back(make_pair(5, 8));
+      vrr.push_back({13, 45});
       return 0;
   }
 /**
