@@ -26,3 +26,6 @@
 
 https://docs.microsoft.com/ru-ru/sql/t-sql/functions/datediff-transact-sql
 
+
+http://dbdesigner.net/designer?landing_guest=true
+
