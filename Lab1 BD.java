@@ -22,3 +22,7 @@
   12) Определить количество различных отчеств людей. Результат расположить по убыванию. Привести 5 первых результатов запроса.
 
   http://bdis.umeta.ru/db/db_course/labs/SQLpHTM/02.htm
+
+
+https://docs.microsoft.com/ru-ru/sql/t-sql/functions/datediff-transact-sql
+
