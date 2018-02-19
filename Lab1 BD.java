@@ -55,3 +55,42 @@ http://dbdesigner.net/designer?landing_guest=true
 http://bdis.umeta.ru/db/db_course/labs/index.html
 
 
+
+
+select  from Н_ЛЮДИ;
+
+
+
+CREATE VIEW Ima AS SELECT ИМЯ FROM Н_ЛЮДИ ORDER BY RANDOM() LIMIT 1;
+select ФАМИЛИЯ from Н_ЛЮДИ where ИМЯ = * from Ima;
+
+
+SELECT ИМЯ FROM Н_ЛЮДИ ORDER BY RANDOM() LIMIT 1;
+
+select ФАМИЛИЯ || ' ' || ИМЯ || ' ' || ОТЧЕСТВО as FIO , count(ИД) as kol from Н_ЛЮДИ
+group by FIO
+order by kol desc, FIO desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
