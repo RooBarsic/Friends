@@ -52,6 +52,6 @@ http://dbdesigner.net/designer?landing_guest=true
 
 
 
-
+http://bdis.umeta.ru/db/db_course/labs/index.html
 
 
