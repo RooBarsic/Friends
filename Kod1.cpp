@@ -1,31 +1,39 @@
 # include <bits/stdc++.h>
-# define sz(s) int(s.size())
   using namespace std;
-  int getpos(int x, int y){
-      if(x == y) return 0;
-      if(x > y) return 1;
-      if(x < y) return 2;
+  long long arr[100100], brr[100100], crr[100100];
+  int kol(long long x)
+  {
+      int a, k = 0;
+      while(x > 0){
+        a = x % 10;
+        x = x / 10;
+        if(a % 2 != 0) k++;
+      }
+      return  k;
+  }
+  int sum(long long x)
+  {
+      int a, s = 0;
+      while(x > 0){
+        a = x % 10;
+        x = x / 10;
+        if(a % 2 != 0) s += a;
+      }
+      return a;
   }
   int main()
   {
-      long long n, ans, x, y, x2, x3, y2, y3;
-      string s;
-      cin >> n >> s;
-      x = y = 0;
-      x2 = y2 = x3 = y3 = 0;
-      ans = 0;
-      for(int i = 0; i < n; i++){
-        x3 = x2;
-        y3 = y2;
-        x2 = x;
-        y2 = y;
-        if(s[i] == 'U') y++;
-        else x++;
-        if(i >= 2){
-            if((getpos(x, y) == 1) && (getpos(x3, y3) == 2)) ans ++;
-            else if((getpos(x, y) == 2) && (getpos(x3, y3) == 1)) ans++;
-        }
+      long long n, k;
+      cin >> n;
+      for(int i = 1; i <= n; i++){
+        cin >> arr[i];
+        brr[i] = kol(arr[i]);
+        crr[i] = sum(arr[i]);
       }
-      cout << ans;
+      sort(brr + 1, brr + 1 + n);
+      sort(crr + 1, crr + 1 + n);
+      for(int i = 1; i <= n; i++){
+        cout << brr[i] << " " << crr[i] << " ";
+      }
       return 0;
   }
