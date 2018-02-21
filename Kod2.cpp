@@ -39,3 +39,4 @@
       }
       return 0;
   }
+гhttps://paste.ubuntu.com/p/q2r7rGbGjJ/
