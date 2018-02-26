@@ -15,9 +15,12 @@ int main ()
             for(j = 1; j <= r; j ++)
             {
                 h = i * j;
-                if(h == t)
+                if(h == t){
                     s++;
+                    break;
+                }
             }
+            if(s != 0) break;
         }
         if(s == 0)
         {
