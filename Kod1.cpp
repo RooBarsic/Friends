@@ -1,28 +1,19 @@
 # include <bits/stdc++.h>
 # define sz(s) int(s.size())
   using namespace std;
-  struct node{
-      string s;
-      int k;
-      bool operator < (const node a) const{
-          if(s[1] < a.s[1]) return 1;
-          return 0;
-      }
-  }e;
-  multiset< node > st;
+  long long arr[10100], sum[10100];
   int main()
   {
-      int n, k;
-      string s;
-      cin >> n;
-      for(int i = 1; i <= n; i++){
-        cin >> s >> k;
-        e.s = s;
-        e.k = k;
-        st.insert(e);
-      }
-      for(auto a : st){
-        cout << a.s << " " << a.k << '\n';
-      }
-      return 0;
+    long long n, m;
+    cin >> n;
+    for(int i = 1; i <= n; i++){
+        cin >> arr[i];
+        sum[i] = sum[i - 1] + arr[i];
+    }
+    cin >> m;
+    for(int i = 1; i <= m; i++){
+        cin >> l >> r;
+        cout << sum[r] - sum[l - 1] << '\n';
+    }
+    return 0;
   }
