@@ -1,19 +1,17 @@
 # include <bits/stdc++.h>
+# define IoS ios_base::sync_with_stdio(0); cin.tie(NULL); cout.tie(NULL);
 # define sz(s) int(s.size())
   using namespace std;
-  long long arr[10100], sum[10100];
   int main()
   {
-    long long n, m;
-    cin >> n;
-    for(int i = 1; i <= n; i++){
-        cin >> arr[i];
-        sum[i] = sum[i - 1] + arr[i];
-    }
-    cin >> m;
-    for(int i = 1; i <= m; i++){
-        cin >> l >> r;
-        cout << sum[r] - sum[l - 1] << '\n';
-    }
-    return 0;
+      int k;
+      string s;
+      getline(cin, s);
+      s += " ";
+      k = 0;
+      for(int i = 1, kpf = sz(s); i < kpf; i++){
+        if((s[i - 1] != ' ') && (s[i] == ' ')) k++;
+      }
+      cout << k;
+      return 0;
   }
