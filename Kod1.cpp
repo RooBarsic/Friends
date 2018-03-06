@@ -5,7 +5,7 @@
   int main()
   {
      string s;
-     int f = 0:
+     int f = 0;
      cin >> s;
      for(int b = 0, c=sz(s); b < c; b++){
        if(int(s[b]) - int('a') <= f){
