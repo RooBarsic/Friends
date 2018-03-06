@@ -4,11 +4,13 @@
   using namespace std;
   int main()
   {
-    long long a, b;
+    long long a, b, aa, bb;
     cin >> a >> b;
     while((a != 0) && (b != 0)){
+      aa = a; bb = b;
       a = a % (2 * b);
-      b = b % (2 * a);
+      if(a != 0) b = b % (2 * a);
+      if((a == aa) && (b == bb)) break;
     }
     cout << a << " " << b;
       
