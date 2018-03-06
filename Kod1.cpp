@@ -4,28 +4,13 @@
   using namespace std;
   int main()
   {
-      //IoS;
-      //freopen("test.cpp", "r", stdin);
-      long long n, a, b, k, t, le, ri, mi;
-      cin >> n >> a >> b;
-      if(a > b) swap(a, b);
-      k = 0;
-      while((1 << k) != n){
-        k++;
-      }
-      t = k;
-      le = 1;
-      ri = n;
-      while(le < ri){
-        mi = (le + ri) / 2;
-        if((le <= a) && (a <= mi) && (mi < b) && (b <= ri)){
-            if(t == k) cout << "Final!";
-            else cout << k;
-            return 0;
-        }
-        if(b <= mi) ri = mi;
-        else le = mi;
-        k--;
-      }
+    long long a, b;
+    cin >> a >> b;
+    while((a != 0) && (b != 0)){
+      a = a % (2 * b);
+      b = b % (2 * a);
+    }
+    cout << a << " " << b;
+      
       return 0;
   }
