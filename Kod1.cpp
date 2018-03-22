@@ -1,23 +1,41 @@
- # include <bits/stdc++.h>
-# define IoS ios_base::sync_with_stdio(0); cin.tie(NULL); cout.tie(NULL);
-# define sz(s) int(s.size())
+ # include <iostream>
+# include <algorithm>
+# include <math.h>
   using namespace std;
+  struct uchenik{
+      string name, srname;
+      int m, f, i, id;
+      uchenik(){
+          name = "";
+          srname = "";
+          m = 0;
+          f = 0;
+          i = 0;
+          id = 0;
+      }
+      long long sr3()
+      {
+          return m + f + i;
+      }
+  };
+  bool cmp(uchenik a, uchenik b)
+  {
+      if(a.sr3() > b.sr3()) return 1;
+      if((a.sr3() == b.sr3()) && (a.id < b.id)) return 1;
+      return 0;
+  }
   int main()
   {
-     string s;
-     int f = 0;
-     cin >> s;
-     for(int b = 0, c=sz(s); b < c; b++){
-       if(int(s[b]) - int('a') <= f){
-         s[b] = char(int('a')+f);
-         f++;
-       }
-       if(f >= 26) break;
-     }
-     if(f < 26) cout<<"-1";
-     else cout << s;
-     return 0;
-   }
-
-
-  
+      long long n, i;
+      uchenik arr[100010];
+      cin >> n;
+      for(i = 1; i <= n; i++){
+        cin >> arr[i].srname >> arr[i].name >> arr[i].m >> arr[i].f >> arr[i].i;
+        arr[i].id = i;
+      }
+      sort(arr + 1, arr + 1 + n, cmp);
+      for(i = 1; i <= n; i++){
+        cout << arr[i].srname << " " << arr[i].name << "\n "[i == n];
+      }
+      return 0;
+  }
