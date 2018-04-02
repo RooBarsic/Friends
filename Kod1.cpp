@@ -2,6 +2,7 @@ https://drive.google.com/file/d/1sJIAf20X8T4hMZVXVWDsQGGGVcJTSoVN/view
 
 https://docs.google.com/document/d/1NxOOw3vDyvd3unZN3b45xR7H96no5B8x0VC18VbHz80/edit
 
+https://docs.google.com/document/d/1NxOOw3vDyvd3unZN3b45xR7H96no5B8x0VC18VbHz80/edit?usp=sharing
 
 # include <algorithm>
 # include <math.h>
