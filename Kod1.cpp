@@ -4,6 +4,11 @@ https://docs.google.com/document/d/1NxOOw3vDyvd3unZN3b45xR7H96no5B8x0VC18VbHz80/
 
 https://docs.google.com/document/d/1NxOOw3vDyvd3unZN3b45xR7H96no5B8x0VC18VbHz80/edit?usp=sharing
 
+
+
+https://docs.google.com/document/d/1c4li6STSmL__5Q1lEMVHhrJTTnebWLUT7Nbb4qyOIOw/edit?usp=sharing
+
+
 # include <algorithm>
 # include <math.h>
   using namespace std;
