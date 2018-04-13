@@ -1,5 +1,7 @@
 https://docs.google.com/document/d/1c4li6STSmL__5Q1lEMVHhrJTTnebWLUT7Nbb4qyOIOw/edit?usp=sharing
 
+https://docs.google.com/document/d/1W44itglGgr9v4yrllnIeJ0Z9t1gPulxFBZZ8EeF5M-E/mobilebasic#
+
 # include <algorithm>
 # include <math.h>
   using namespace std;
