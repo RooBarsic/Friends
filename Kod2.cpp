@@ -254,4 +254,14 @@
     3. Postroit Graf Peresecheniy
     4. Nayti semeystvo
     5.
+    
+    input
+7
+0 1 1 1 0 0 0
+1 0 1 0 1 0 1
+1 1 0 1 1 1 1
+1 0 1 0 1 1 1
+0 1 1 1 0 1 0
+0 0 1 1 1 0 1
+0 1 1 1 0 1 0
 */
