@@ -3,9 +3,9 @@
   using namespace std;
   struct Graph{
       int n;
-      int color[110], arr[110][110];
-      vector< int > vrr[110];
-      bitset< 100100 > bita[110];
+      int color[25], arr[25][25];
+      vector< int > vrr[25];
+      bitset< 25 > bita[25];
 
       int flag = 0;
       vector< int > gami;
@@ -45,8 +45,22 @@
             }
           }
       }
+
+      pair< int, int > find_max()
+      {
+          int x = 1, y = 1;
+          for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if(arr[x][y] < arr[i][j]){
+                    x = i;
+                    y = j;
+                }
+            }
+          }
+          return {x, y};
+      }
   };
-  int id[110];
+  int id[25];
   vector< int > gamilt;
   map< int, pair< int, int > > id_xy;
   map< pair< int, int >, int > xy_id;
@@ -148,11 +162,25 @@
   }
 
   Graph glob;
-  vector< bitset< 100100 > > masks;
-  void out_bita(int k, bitset< 100100 > mk)
+  vector< bitset< 25 > > masks;
+  void out_bita(int k, bitset< 25 > mk)
   {
       for(int i = 0; i <= k; i++){
         cout << mk[i];
+      }
+      cout << '\n';
+  }
+  void out_bita_1(int k, bitset< 25 > mk)
+  {
+      for(int i = 0; i <= k; i++){
+        if(mk[i] == 1) cout << i << " ";
+      }
+      cout << '\n';
+  }
+  void out_roads(int k, bitset< 25 > mk)
+  {
+      for(int i = 0; i <= k; i++){
+        if(mk[i] == 1) cout << "(" << id_xy[i].first << "; " << id_xy[i].second << ") ";
       }
       cout << '\n';
   }
@@ -167,8 +195,8 @@
         }
         for(int j = i + 1; j <= glob.n; j++){
             if(glob.arr[i][j] == 0){
-                bitset< 100100 > mask = glob.bita[i] | glob.bita[j];
-                bitset< 100100 > M;
+                bitset< 25 > mask = glob.bita[i] | glob.bita[j];
+                bitset< 25 > M;
                 M[i] = M[j] = 1;
                 //cout << " j = " << j << " mask = ";
                 //out_bita(glob.n, mask);
@@ -198,18 +226,34 @@
       }
   }
 
-  void build_from_masks()
+  Graph build_from_masks()
   {
-      cout << " sfdgsdG";
+      //cout << " sfdgsdG      Graph build_from_masks()  " << '\n';
       Graph g4;
       g4.n = sz(masks);
       for(int i = 0, kpf = sz(masks); i < kpf; i++){
         for(int j = 0; j < kpf; j++){
-            g4.arr[i][j] = masks[i].count() + masks[j].count() - (masks[i] & masks[j]).count();
-            g4.arr[j][i] = g4.arr[i][j];
+            g4.arr[i + 1][j + 1] = masks[i].count() + masks[j].count() - (masks[i] & masks[j]).count();
+            g4.arr[j + 1][i + 1] = g4.arr[i + 1][j + 1];
         }
       }
-      //return g4;
+      return g4;
+  }
+  bitset< 25 > dell_bita(int n, bitset< 25 > a, bitset< 25 > b)
+  {
+      for(int i = 0; i <= n; i++){
+        if(b[i] == 1) a[i] = 0;
+      }
+      return a;
+  }
+
+  void add_new_mask(vector< bitset< 25 > > &mas, bitset< 25 > m)
+  {
+      if(m.count() == 0) return ;
+      for(auto a : mas){
+        if(a == m) return ;
+      }
+      mas.push_back(m);
   }
   int main()
   {
@@ -244,19 +288,49 @@
         cout << '\n';
       }
 
-      Graph g4; // = build_from_masks();
-      cout << " Builded Graph from family : " << '\n';
-      //g4.outt_Graph();
+      Graph g4;
+      while(sz(masks) > 0){
+        g4 = build_from_masks();
+        cout << " Builded Graph from family : " << '\n';
+        g4.outt_Graph();
+
+        if(sz(masks) <= 1){
+            int x = g4.find_max().first;
+            cout << " x = " << x << '\n';
+            out_bita_1(g3.n, masks[x - 1]);
+            out_roads(g3.n, masks[x - 1]);
+            break;
+        }
+        int x = g4.find_max().first;
+        int y = g4.find_max().second;
+        cout << " x = " << x << " y = " << y << '\n';
+        out_bita_1(g3.n, masks[x - 1]);
+        out_bita_1(g3.n, masks[y - 1]);
+        out_roads(g3.n, masks[x - 1]);
+        out_roads(g3.n, masks[y - 1]);
+
+        /// Dell x, y, Build new masks
+        bitset< 25 > mm = masks[x - 1] | masks[y - 1];
+        vector< bitset< 25 > > new_masks;
+        for(int i = 0, kpf = sz(masks); i < kpf; i++){
+            add_new_mask(new_masks, dell_bita(g3.n, dell_bita(g3.n, masks[i], masks[y - 1]), masks[x - 1]));
+        }
+        masks = new_masks;
+        cout << " ------------------------------ " << '\n';
+      }
   }
 /**
     1. Poisk Gamiltonov sikl
     2. Build new Graph based on old graph and Gamilton sikl
     3. Postroit Graf Peresecheniy
     4. Nayti semeystvo
-    5.
+    5. Build Graph from semeystvo
+    6. find max
+    7. dell max, build new family
+    8. goto 5
     
-    input
-7
+    
+    7
 0 1 1 1 0 0 0
 1 0 1 0 1 0 1
 1 1 0 1 1 1 1
