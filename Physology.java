@@ -18,8 +18,6 @@ http://psytests.org/result?v=mteCEd
 
 https://www.16personalities.com/ru/lichnost-infp
 
-https://www.16personalities.com/ru/lichnost-infp
-
 http://psytests.org/result?v=canA150VZVS2zHe
 
 http://psytests.org/result?v=lnhR1bN2bOKWQOao
