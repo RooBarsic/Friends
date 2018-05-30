@@ -14,6 +14,8 @@ http://psytests.org/result?v=epiY4FkM
 Doklad
 http://psytests.org/result?v=mteA1i
 
+http://psytests.org/result?v=mteCEd
+
 https://www.16personalities.com/ru/lichnost-infp
 
 https://www.16personalities.com/ru/lichnost-infp
