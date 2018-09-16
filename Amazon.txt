@@ -83,8 +83,12 @@ Are you currently enrolled at an international university, but participating in 
     no
 Have you taken the Amazon Full-Time Online Assessment in the past 6 months?
     no
+-------------------------------------------------------------------------------------------------------------------------
 
-
-
-
+Voluntary Equal Opportunity Self-Identification
+  What is your Gender?
+    Male 
+  What is your race/ethnic background? 
+    Asian (not Hispanic or Latino)
+  
 
