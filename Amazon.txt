@@ -38,5 +38,42 @@ Please enter any languages you speak and your proficiency of each
     Persian      native or bilingual
     English      limited
 
+----------------------------------------------------------------------------------------
+General Questions
+Have you previously applied to Amazon or any Amazon subsidiary or affiliate? 
+  no
+Have you previously been employed by Amazon or any Amazon subsidiary or affiliate?
+  no
+
+Are you subject to a non-competition agreement or other agreement which would preclude or 
+restrict your employment at Amazon or any Amazon subsidiary or affiliate? *
+  No
+If offered employment by Amazon, would you be legally eligible to begin employment immediately? 
+  no
+Do you need, or will you need in the future, any immigration-related support or sponsorship from
+Amazon in order to begin or continue employment with Amazon?
+  no
+If you are currently located in the US, please indicate your current U.S. immigration status/visa 
+and type of sponsorship required (if known):
+  F-1 - Student Visa  - yes
+  If currently in F-1 status, would you require Curricular Practical Training authorization from a university?
+    no
+    If no, have you applied for Optional Practical Training (OPT) work authorization?
+       no
+Are you a current or former employee of any government (including any governmental entities at the federal/national, state/provincial, and local levels and including publicly funded institutions)? *
+  Never
+  
+Information provided in support of this application, including but not limited to my resume or CV and the above information, is true and correct. I understand that false statements or material omissions of any kind during the hiring process may result in denial of employment or discharge. *
+    By checking this box, I confirm my understanding
+I understand that nothing contained in this employment application or interview process is intended to create an employment contract between Amazon and me and that no representation or promise regarding the duration of the termination of employment with Amazon is authorized or binding unless contained in a written document signed by an officer of Amazon. *
+    By checking this box, I confirm my understanding
+Data Retention Agreement: By submitting your CV you authorize Amazon to store your information in the Amazon.com group of companies' world-wide recruitment database for the purpose of assessing your suitability for this and future vacancies. * 
+    By checking this box, I confirm my understanding
+      
+
+
+
+
+
 
 
