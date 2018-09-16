@@ -70,8 +70,19 @@ I understand that nothing contained in this employment application or interview 
 Data Retention Agreement: By submitting your CV you authorize Amazon to store your information in the Amazon.com group of companies' world-wide recruitment database for the purpose of assessing your suitability for this and future vacancies. * 
     By checking this box, I confirm my understanding
       
+-----------------------------------------------------------------------------------------------------------------------
 
-
+Job Specific Questions
+  What Amazon location are you interested in working at?
+    1 - Phoenix, Arizona
+    2 - Portland, Oregon
+    3 - boston massachusetts
+What is your preferred start date? (Date Format: MM/DD/YYYY) 
+    07/15/2019
+Are you currently enrolled at an international university, but participating in a study abroad program in the US? 
+    no
+Have you taken the Amazon Full-Time Online Assessment in the past 6 months?
+    no
 
 
 
