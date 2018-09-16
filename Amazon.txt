@@ -1,16 +1,42 @@
 Legal First Name = Farrukh
-Legal Middle Name = Tojidinovich
 Legal Last Name = Karimov
-Preferred Name = 
 Primary Email = karimov.farrux@list.ru
 One phone number is required*
   Mobile Phone :  +79964980868 
-  Use this number to call me Mobile Phone.
+  Use this number to call me : Mobile Phone.
 
 Address Information
 Please enter your address information.
     Type : Mailing
+    This is my default address
+    Street Address : Vyazemskiy per. 5-7
+    Country : Russia Federation
+    City : Saint-Petersburg
+    Postal Code : 197022
+
+Please enter any university education experience you have and details.
+    University : ITMO University
+    Start Date : 01.09.2017
+    Expected Graduation Date : 01.06.2021
+    I am currently enrolled here : yes
+    Degree : Bachelors of Science
+    Major 1 : Computer Science
+
+Employment
+Please add any relevant work experience.
+    I don't have any work experience
     
+Citizenship / Permanent Residency
+Please enter your country of permanent residency and country of citizenship.
+    Country : Tajikistan
+    Legal Status : Citizen
+
+Language
+Please enter any languages you speak and your proficiency of each
+    Language --- Spoken Language Proficiency
+    Russian      native or bilingual
+    Persian      native or bilingual
+    English      limited
 
 
 
