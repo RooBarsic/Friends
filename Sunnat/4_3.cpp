@@ -6,25 +6,23 @@
 		  stak1.push(a);
 	  }
 	  int pop_front(){
-		  if(stak1.size() == 0) return -1;
-		  while(stak1.size() > 1){
-			  int a = stak1.top();
-			  stak1.pop();
-			  stak2.push(a);
+		  if(stak2.size() == 0){
+			  while(stak1.size() > 0){
+				  int a = stak1.top();
+				  stak1.pop();
+				  stak2.push(a);
+			  }
 		  }
-		  int ans = stak1.top();
-		  stak1.pop();
-		  while(stak2.size() > 0){
+		  if(stak2.size() == 0) return -1;
+		  else {
 			  int a = stak2.top();
-			  stak1.push(a);
 			  stak2.pop();
+			  return a;
 		  }
-		  return ans;
-	  }
+	   }
   };
   int main()
   {
-	  ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 	  ochered my_ochered;
 	  int n;
 	  cin >> n;
@@ -41,4 +39,4 @@
 	  }
 	  cout << "YES";
 	  return 0;
-  }
+}
