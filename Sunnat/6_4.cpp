@@ -9,24 +9,24 @@
   int main()
   {
       int arr[100000010];     
-      multiset< int > st1;    // возьмём сет
+      multiset< int > st1;    // возьмём сет - чтобы быстрее искать максимальный элемент
       int n, k;
       cin >> n;
       for(int i = 0; i < n; i++){
-          cin >> arr[i];
+          cin >> arr[i];  // входной массив - сохраним в arr
       }
-      cin >> k;
+      cin >> k;   // возьмём к
       for(int i = 0; i < k; i++){
-          st1.insert(arr[i]);
+          st1.insert(arr[i]);    // добавим к первых элементов массива - в сет
       }
       
-      cout << get_max(st1) << " ";
-      for(int i = k; i < n; i++){
-          st1.erase(st1.find(arr[i - k]));
+      cout << get_max(st1) << " "; // выведем максимальный элемент сета
+      for(int i = k; i < n; i++){  // теперь пройдёмся по остальным n-k элементам сета,
+          st1.erase(st1.find(arr[i - k]));  // каждый раз добавляя i-ый элемент - удалим (i-k)-ый ( т.к. мы смотрим на
+                                            // к последовательных элементов
+          st1.insert(arr[i]);               // добавим i-ый элемент массива - в сет
           
-          st1.insert(arr[i]);
-          
-          cout << get_max(st1) << " ";
+          cout << get_max(st1) << " ";      // - выведем максимальный элемент сета ( т.е. максимум из arr[i-k+1],...,arr[i]
       }
       
       return 0;
