@@ -38,7 +38,7 @@
               if(deq1.back() == get_rever(s[i])) deq1.pop_back();
               else if(is_close(deq1.back())) deq1.push_back(s[i]);
               else {
-                  cout << "IMPOSSIBLE";
+                  cout << "IMPOSSIBLE" << '\n';
                   return 0;
               }
           }
@@ -51,25 +51,6 @@
           s = get_rever(deq1.front()) + s;
           deq1.pop_front();
       }
-      cout << s;
+      cout << s << '\n';
       return 0;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
