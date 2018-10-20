@@ -2,7 +2,7 @@
 using namespace std;
 void isort(int n, int *params, int *index){
 	for(int i = 0; i < n; i++){
-		for(int j = i; i >= 1; j--){
+		for(int j = i; j >= 1; j--){
 			if(params[j - 1] < params[j]) break;
 			swap(params[j - 1], params[j]);
 			swap(index[j - 1], index[j]);
