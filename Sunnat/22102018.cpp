@@ -7,6 +7,8 @@
 		  if(a[i] < b[i]) return -1;
 		  if(a[i] > b[i]) return 1;
 	  }
+	  if(sz(a) < sz(b)) return -1;
+	  if(sz(a) > sz(b)) return 1;
 	  return 0;
   }
   void InsertionSort(int n, string srr[]) 
