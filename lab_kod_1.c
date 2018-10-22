@@ -17,8 +17,6 @@
 	  list.value = x;
 	  list.next = NULL;
 	  list_node *addr_list = &list;
-	  if((addr_list->next) == NULL) printf(" NULL ");
-	  printf("%d \n", get_value(addr_list));
 	  return addr_list;
   }
   
@@ -81,6 +79,18 @@
   
   void outlist(list_node *list){
 	  if((list->next) == list) printf(" NULL ssss");
+	  printf(" list values : ");
+	  int k = 0;
+	  while(list != NULL){
+		  printf("%d ", (list->value));
+		  if((list->next) == NULL) printf(" NULL ");
+		  list = list->next;
+		  k++;
+		  if( k == 10) break;
+	  }
+	  printf("\n");
+  
+
   }
   
   
@@ -89,9 +99,4 @@
 	  list_node *list = list_create(5);
 	  if((list->next) == list) printf(" NULL dadaad");
 	  outlist(list);
-	  printf("%d \n", get_value(list));
-	  list = list_add_front(3, list);
-	  outlist(list);
   }
-
-
