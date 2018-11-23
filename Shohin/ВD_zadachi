@@ -1,0 +1,18 @@
+#1
+select * from bd_employees
+where bd_employees.phone_number = '8-(495)-___-__-__' or
+      bd_employees.phone_number = '8-(499)-___-__-__';
+
+
+
+
+#2
+select *
+from bd_employees
+where bd_employees.phone_number like '8-(495)-____-___' or
+      bd_employees.phone_number like '8-(495)-_-____-__' or
+      bd_employees.phone_number like '8-(495)-__-____-_' or
+    bd_employees.phone_number like '8-(499)-____-___' or
+    bd_employees.phone_number like '8-(499)-_-____-__' or
+    bd_employees.phone_number like '8-(499)-__-____-_'
+;
