@@ -41,7 +41,8 @@ void solve(){
             dp[i][j] = -1;
         }
     }
-    cout << calc(m, m, dp);
+    cout << calc(m, m, dp) << '\n';
+    
 }
 
 int main() {
