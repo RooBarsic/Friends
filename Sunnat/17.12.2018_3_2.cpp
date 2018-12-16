@@ -9,11 +9,11 @@
 нижележащего.
 */
 
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-double calc(int n, int k, double **dp) {
+double calc(int n, int k, vector< vector< double > >& dp) {
     if ((n < 0)||(k < 0)) return 0;
     if(k == 1) {
         if(n == 1) return 1;
@@ -33,20 +33,15 @@ void solve(){
     int m, i, j;
     cin >> m;
 
-    double **d = (double **) malloc(sizeof(double *) * (m + 1));
+    vector< vector< double > > dp (m + 1);
 
     for (i = 0; i < m + 1; i++) {
-        d[i] = (double *) malloc(sizeof(double) * (m + 1));
+        dp[i] = vector<double>(m + 1);
         for (j = 0; j < m + 1; j++) {
-            d[i][j] = -1;
+            dp[i][j] = -1;
         }
     }
-    cout << calc(m, m, d);
-
-    for(int i = 0; i < m + 1; i++) {
-        free(d[i]);
-    }
-    free(d);
+    cout << calc(m, m, dp);
 }
 
 int main() {
