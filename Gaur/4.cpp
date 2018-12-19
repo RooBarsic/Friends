@@ -15,7 +15,7 @@
     double crr[m + 1][m + 1];
 	for(int x = 1; x <= m; x++){
 		for(int y = 1; y <= m; y++){
-			crr[x][y] = 0;
+			crr[x][y] = 0.;
 			for(int j = 1; j <= m; j++){
 				crr[x][y] += arr[x][j] * prr[j][y];
 			}
@@ -98,7 +98,7 @@
     mult_arr_prr();
     copu_prr_to_brr();
     double mx = find_mx();
-    mult_x_to_brr(fact * znak);
+    mult_x_to_brr(1./(fact * znak));
     while(true){
 		if(mx < eps) break;
 		sum_res_brr();
@@ -109,7 +109,7 @@
 		fact = fact * (x + 1.) * (x + 2.);
 		x += 2.;
 		znak = -znak;
-		mult_x_to_brr(fact * znak);
+		mult_x_to_brr(1./(fact * znak));
 
 		mx = find_mx();
 	}
