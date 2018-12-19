@@ -60,7 +60,7 @@
   void out_res(){
 	  for(int i = 1; i <= m; i++){
 		 for(int j = 1; j <= m; j++){
-			 cout << res[i][j] << " ";
+			 cout << fixed << setprecision(9) << res[i][j] << " ";
 		 }
 		 cout << '\n';
 	 }
