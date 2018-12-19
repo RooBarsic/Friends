@@ -82,7 +82,7 @@
 	  for(int i = 1; i <= m; i++){
 		 for(int j = 1; j <= m; j++){
 			 prr[i][j] = arr[i][j];
-			 res[i][j] = 1;
+			 res[i][j] = 1.;
 		 }
 	 }
   }
