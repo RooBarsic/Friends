@@ -99,8 +99,17 @@ void solve(){
             x++;
         }
         if(x == p) break;
-        swap(t[x - 1], t[x]);
-        m--;
+        x--;
+        int y = x;
+        for(int i = x; i < p; i++){
+            if(t[y] > t[i]) y = i;
+        }
+        while((m > 0) && (0 < y) && (t[y - 1] > t[y])){
+            swap(t[y], t[y - 1]);
+            y--;
+            m--;
+        }
+
     }
 
     cout << t;
