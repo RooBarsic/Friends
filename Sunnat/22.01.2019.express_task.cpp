@@ -7,22 +7,17 @@ int main()
     cin >> a >> b;
     if(sz(a) != sz(b)) cout << "NO";
     else {
-        int last_b = sz(b) - 1;
+        int left_b = 0;
 		deque< char > deq;
-        for(int i = sz(a) - 1; i >= 0; i--){
+        for(int i = 0, k = sz(a); i < k; i++){
             deq.push_back(a[i]);
-            if(a[i] == b[last_b]){
-				while(sz(deq) > 0){
-					if(deq.back() != b[last_b]){
-						cout << "NO";
-						return 0;
-					}
-					last_b--;
-					deq.pop_back();
-				}
+            while((sz(deq) > 0) && (deq.back() == b[left_b])){
+                left_b++;
+                deq.pop_back();
             }
         }
-        cout << "YES";
+        if(sz(deq) == 0) cout << "YES";
+        else cout << "NO";
     }
     return 0;
 }
