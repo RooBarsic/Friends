@@ -11,9 +11,9 @@ int main() {
     }
     fill(color + 1, color + 1 + n, 0);
     int k = n;
-    while(k > (n / 2)){
+    while(k >= (n / 2)){
         int x = rand() % n + 1;
-        while(color[x] == 0){
+        while(color[x] != 0){
             x = rand() % n + 1;
         }
         int kol = 0;
