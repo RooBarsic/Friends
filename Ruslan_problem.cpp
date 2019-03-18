@@ -29,5 +29,6 @@ int main() {
         }
         k -= kol;
     }
+    cout << "no";
     return 0;
 }
