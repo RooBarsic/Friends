@@ -3,7 +3,7 @@
 #define MAX 100
 using namespace std;
 double countVolume(double Radius, double Height){
-	double pi = 3.14l
+	double pi = 3.14;
 	double V = (pi * Radius * Radius) * Height;
 	return V;
 }
