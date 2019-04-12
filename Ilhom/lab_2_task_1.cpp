@@ -39,7 +39,7 @@ int main(){
 	cin >> radius;
 	cout << " print Height : ";
 	cin >> height;
-	cout << " Cylinder volume = " << countVolume(radius, height);
+	cout << " Cylinder volume = " << countVolume(radius, height) << '\n';
 	
 	// test string
 	char *crr = getString();
