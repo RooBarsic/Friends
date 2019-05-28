@@ -38,7 +38,7 @@ public class Main {
                         break;
                     default:
                         System.out.println("Wrong command!!");
-                        System.out.println("Please use one off this commands :");
+                        System.out.println("Please use one of these commands :");
                         System.out.println("load name classpath");
                         System.out.println("run name");
                         System.out.println("unload name");
