@@ -15,6 +15,7 @@ public class Main {
 
                         } catch (Exception e){
                             System.out.println("Som Error while reading arguments for command 'load'");
+                            e.printStackTrace();
                         }
                         break;
                     case "run":
@@ -23,6 +24,7 @@ public class Main {
 
                         } catch (Exception e){
                             System.out.println("Som Error while reading arguments for command 'run'");
+                            e.printStackTrace();
                         }
                         break;
                     case "unload":
@@ -31,6 +33,7 @@ public class Main {
 
                         } catch (Exception e){
                             System.out.println("Som Error while reading arguments for command 'unload'");
+                            e.printStackTrace();
                         }
                         break;
                     default:
