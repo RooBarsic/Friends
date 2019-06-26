@@ -31,10 +31,10 @@
         }
         
         ~Worker(){     // деструктор
-            //free(name);
-            //free(lastName);
-            //free(secondName);
-            cout << " kunku ";
+            std::cout << "start deleting" << '\n';
+            free(name);
+            free(lastName);
+            free(secondName);
         }
 
     private:
@@ -73,4 +73,14 @@
             
         }
   };
- 
+  
+  int main(){
+      char a[10];
+      char b[10];
+      char c[10];
+     cin >> a >> b >> c;
+     Worker *ww = new Worker(a, b, c);
+    cout << " sdg";
+    delete ww;
+    return 0;
+}
