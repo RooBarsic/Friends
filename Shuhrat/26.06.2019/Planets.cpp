@@ -25,7 +25,7 @@ class Planet {
             planetinfo.moons=moons;
         }
         ~Planet(){ //Деструктор
-			//delete[] name;
+			free(planetinfo.name);
         }
      
     void getPlanet(){    // функция для ввода данных о планете
@@ -84,4 +84,4 @@ int main(){
           planets[i].print();
       }
       return 0;
-  }
+}
