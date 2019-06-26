@@ -18,7 +18,7 @@ class Planet {
                 planetinfo.moons = 0;
             }
         //конструктор
-        Planet(char name[10], int diameter, bool haslife, int moons){
+        Planet(char name[20], int diameter, bool haslife, int moons){
             planetinfo.name=name;
             planetinfo.diameter=diameter;
             planetinfo.haslife=haslife;
@@ -30,7 +30,7 @@ class Planet {
      
     void getPlanet(){    // функция для ввода данных о планете
                 cout << "Введите имя планеты : ";
-                char name[10];
+                char name[20];
                 cin >> name;
                 planetinfo.name = name;
                 cout << "Введите диаметр планеты : ";
