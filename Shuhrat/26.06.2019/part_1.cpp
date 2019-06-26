@@ -4,35 +4,42 @@
   class Worker {    
     public:
         // Конструктор класса human
-        Worker(std::string last_name, std::string name, std::string second_name)
+        Worker(std::string lastName, std::string name, std::string secondName)
         {
-            this->last_name = last_name;
+            this->lastName = lastName;
             this->name = name;
-            this->second_name = second_name;
+            this->secondName = secondName;
+            this->money = 0;
         }
 
         // Получение ФИО человека
-        std::string get_full_name()
+        std::string getFullName()
         {
-            std::ostringstream full_name;
-            full_name << this->last_name << " "
+            std::ostringstream fullName;
+            fullName << this->lastName << " "
                 << this->name << " "
-                << this->second_name;
-            return full_name.str();
+                << this->secondName;
+            return fullName.str();
+        }
+        
+        // функция для начисления зарплаты
+        addSallary(int sum){
+            this->money += sum;
         }
 
     private:
         std::string name; // имя
-        std::string last_name; // фамилия
-        std::string second_name; // отчество
+        std::string lastName; // фамилия
+        std::string secondName; // отчество
+        int money.
   };
   
   // служащий с почасовой оплатой
   class HourlyEmployee : public Worker {
     public:
         // Конструктор класса HourlyEmployee
-        HourlyEmployee(std::string last_name, std::string name, std::string second_name) 
-            : Worker(last_name, name, second_name) {
+        HourlyEmployee(std::string lastName, std::string name, std::string secondName) 
+            : Worker(lastName, name, secondName) {
             
         }
   };
@@ -41,8 +48,8 @@
   class StateEmployee : public Worker {
     public:
         // Конструктор класса StateEmployee
-        StateEmployee(std::string last_name, std::string name, std::string second_name) 
-            : Worker(last_name, name, second_name) {
+        StateEmployee(std::string lastName, std::string name, std::string secondName) 
+            : Worker(lastName, name, secondName) {
             
         }
   };
@@ -51,8 +58,8 @@
   class InterestRateEmployee : public Worker {
     public:
         // Конструктор класса InterestRateEmployee
-        InterestRateEmployee(std::string last_name, std::string name, std::string second_name) 
-            : Worker(last_name, name, second_name) {
+        InterestRateEmployee(std::string lastName, std::string name, std::string secondName) 
+            : Worker(lastName, name, secondName) {
             
         }
   };
