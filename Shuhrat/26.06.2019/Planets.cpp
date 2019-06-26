@@ -63,7 +63,7 @@ class Planet {
 int main(){
     setlocale(0, "Russian");
      //freopen("test.txt", "r", stdin);
-      int numberOfPlanets = 2;
+      int numberOfPlanets = 9;
       Planet planets[10];
       cout << '\n' << "----------- Вводим данные о 9 планетах ------------ " << '\n';
       for(int i = 1; i <= 9; i++){
