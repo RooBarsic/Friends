@@ -4,7 +4,7 @@
   class Worker {    
     public:
         // Конструктор класса human
-        Worker(std::string lastName, std::string name, std::string secondName)
+        Worker(char* lastName, char* name, char* secondName)
         {
             this->lastName = lastName;
             this->name = name;
@@ -12,33 +12,43 @@
             this->money = 0;
         }
 
-        // Получение ФИО человека
-        std::string getFullName()
+        char* getLastName()
         {
-            std::ostringstream fullName;
-            fullName << this->lastName << " "
-                << this->name << " "
-                << this->secondName;
-            return fullName.str();
+            return lastName;
+        }
+        char* getName()
+        {
+            return name;
+        }
+        char* getSecondName()
+        {
+            return secondName;
         }
         
         // функция для начисления зарплаты
         addSallary(int sum){
             this->money += sum;
         }
+        
+        ~Worker(){     // деструктор
+            //free(name);
+            //free(lastName);
+            //free(secondName);
+            cout << " kunku ";
+        }
 
     private:
-        std::string name; // имя
-        std::string lastName; // фамилия
-        std::string secondName; // отчество
-        int money.
+        char* name; // имя
+        char* lastName; // фамилия
+        char* secondName; // отчество
+        int money;
   };
   
   // служащий с почасовой оплатой
   class HourlyEmployee : public Worker {
     public:
         // Конструктор класса HourlyEmployee
-        HourlyEmployee(std::string lastName, std::string name, std::string secondName) 
+        HourlyEmployee(char* lastName, char* name, char* secondName) 
             : Worker(lastName, name, secondName) {
             
         }
@@ -48,7 +58,7 @@
   class StateEmployee : public Worker {
     public:
         // Конструктор класса StateEmployee
-        StateEmployee(std::string lastName, std::string name, std::string secondName) 
+        StateEmployee(char* lastName, char* name, char* secondName) 
             : Worker(lastName, name, secondName) {
             
         }
@@ -58,12 +68,9 @@
   class InterestRateEmployee : public Worker {
     public:
         // Конструктор класса InterestRateEmployee
-        InterestRateEmployee(std::string lastName, std::string name, std::string secondName) 
+        InterestRateEmployee(char* lastName, char* name, char* secondName) 
             : Worker(lastName, name, secondName) {
             
         }
   };
-  
-  int main(){
-    return 0;
-  }
+ 
