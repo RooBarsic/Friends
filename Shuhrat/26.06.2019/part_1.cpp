@@ -80,7 +80,6 @@
       char c[10];
      cin >> a >> b >> c;
      Worker *ww = new Worker(a, b, c);
-    cout << " sdg";
     delete ww;
     return 0;
 }
