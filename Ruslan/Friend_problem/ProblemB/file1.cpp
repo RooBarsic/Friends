@@ -1,6 +1,7 @@
 # include<bits/stdc++.h>
 # define sz(s) int(s.size())
-using namespace std;double arr[100100], brr[100100];
+using namespace std;
+double arr[100100], brr[100100];
 int main(){
     srand(time(NULL));
     ios_base::sync_with_stdio(0); cin.tie(NULL); cout.tie(NULL);
