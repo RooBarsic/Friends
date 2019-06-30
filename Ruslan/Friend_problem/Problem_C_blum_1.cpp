@@ -2,7 +2,7 @@
 # define sz(s) int(s.size())
 using namespace std;
 int mood = 500000;
-bool blum_arr[505000];
+bitset< 505000 > blum_arr;
 int get_hash1(string s){
     long long prost = 500009ll;
     if(sz(s) == 0) return 0;
