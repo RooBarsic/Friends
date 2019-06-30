@@ -6,7 +6,7 @@ using namespace std;
 long long mood = 20173ll;
 //, 14401, 28573, 13033, 23417, 29173, 15307, 26459, 13367, 929, 23663
 //int prost[15] = {1000003, 1000033, 24859, 4889, 13553, 967, 26777, 31357, 3881, 18913, 20173, 18859, 10369, 28591, 12113};
-bitset< 20173 > blum[100];
+bitset< 20173 > blum[50];
 inline int get_hash(string s, int prost){
     if(sz(s) == 0) return 0;
     long long hash = 0ll;
@@ -31,14 +31,14 @@ int main(){
         cin >> s;
         int sum = 0;
         //sum += blum[sz(s)][get_hash(s, 31)];
-        sum += blum[sz(s)/10][get_hash(s + "aba", 1000033)];
+        sum += blum[sz(s)/20][get_hash(s + "aba", 1000033)];
         //sum += blum[2][get_hash(s + "cafa", 967)];
         //sum += blum[3][get_hash(s + "codar", 3881)];
         //sum += blum[4][get_hash(s + "moraga", 4889)];
         if(sum != 1){
             ans++;
             //blum[0][get_hash(s, 31)] = 1;
-            blum[sz(s)/10][get_hash(s + "aba", 1000033)] = 1;
+            blum[sz(s)/20][get_hash(s + "aba", 1000033)] = 1;
             //blum[2][get_hash(s + "cafa", 967)] = 1;
             //blum[3][get_hash(s + "codar", 3881)] = 1;
             //blum[4][get_hash(s + "moraga", 4889)] = 1;
