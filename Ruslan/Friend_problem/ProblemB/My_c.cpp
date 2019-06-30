@@ -56,14 +56,16 @@ int main(){
     int last = 1;
     for(int i = 1; i <= n; i++){
         kol_equal[dat[i].pred]--;
-        upd_t(dat[i].id, 0);
         if(dat[i].right != dat[last].right){
             count += (i - 1 - last + 1) * (n - i + 1);
             for(int j = last; j < i; j++){
-                auc += 0.5 * kol_equal[dat[i].pred];
-                auc += 1.0 + sum_lr(dat[i].id, n);
+                auc += 0.5 * kol_equal[dat[j].pred];
+                auc += 1.0 * sum_lr(dat[j].id, n);
             }
+            last = i;
         }
+        upd_t(dat[i].id, -1);
+
     }
    
     answer = auc / count;
