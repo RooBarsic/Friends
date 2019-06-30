@@ -31,17 +31,17 @@ int main(){
         cin >> s;
         int sum = 0;
         sum += blum[0][get_hash(s, 31)];
-        sum += blum[1][get_hash(s + "aba", 31)];
-        sum += blum[2][get_hash(s + "cafa", 31)];
-        sum += blum[3][get_hash(s + "codar", 31)];
-        sum += blum[4][get_hash(s + "moraga", 31)];
+        sum += blum[1][get_hash(s + "aba", 1000033)];
+        sum += blum[2][get_hash(s + "cafa", 967)];
+        sum += blum[3][get_hash(s + "codar", 3881)];
+        sum += blum[4][get_hash(s + "moraga", 4889)];
         if(sum != 5){
             ans++;
             blum[0][get_hash(s, 31)] = 1;
-            blum[1][get_hash(s + "aba", 31)] = 1;
-            blum[2][get_hash(s + "cafa", 31)] = 1;
-            blum[3][get_hash(s + "codar", 31)] = 1;
-            blum[4][get_hash(s + "moraga", 31)] = 1;
+            blum[1][get_hash(s + "aba", 1000033)] = 1;
+            blum[2][get_hash(s + "cafa", 967)] = 1;
+            blum[3][get_hash(s + "codar", 3881)] = 1;
+            blum[4][get_hash(s + "moraga", 4889)] = 1;
         }
     }
     cout << ans;
