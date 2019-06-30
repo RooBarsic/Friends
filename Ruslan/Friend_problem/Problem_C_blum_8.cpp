@@ -1,5 +1,5 @@
 // use one hash
-
+// WA
 # include<bits/stdc++.h>
 # define sz(s) int(s.size())
 using namespace std;
@@ -65,7 +65,7 @@ int main(){
     for(int i = 1; i <= n; i++){
         string s;
         cin >> s;
-        long long x = (get_hash(s, prost[0]) * 1ll * get_hash(s, prost[1])) % mood;
+        long long x = get_hash(s, prost[1]) % mood;
         int sum = 0;
         sum += blum_arr[0][x];
         //sum += blum_arr[0][get_hash(s, prost[1])];
