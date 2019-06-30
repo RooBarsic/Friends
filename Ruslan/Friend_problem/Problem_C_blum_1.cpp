@@ -1,3 +1,4 @@
+// WA
 # include<bits/stdc++.h>
 # define sz(s) int(s.size())
 using namespace std;
