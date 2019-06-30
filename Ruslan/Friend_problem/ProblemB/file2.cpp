@@ -14,7 +14,7 @@ int main(){
     }
    
     for (int i = 1; i <= n; i++){
-        for (int j = i; i <= n; i++){
+        for (int j = i; i <= n; j++){
             if(right[i] > right[j]){
                 count += 1.0;
                 if(pred[i] > pred[j])
