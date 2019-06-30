@@ -1,7 +1,7 @@
 # include<bits/stdc++.h>
 # define sz(s) int(s.size())
 using namespace std;
-int prost = 100003;
+int prost = 500009;
 int calc_hash(string s){
     if(sz(s) == 0) return 0;
     int hash = 0, i;
@@ -10,9 +10,8 @@ int calc_hash(string s){
     }
     return hash;
 }
-int arr[55000];
+int arr[505000];
 int main(){
-    int n;
     cin >> n;
     for(int i = 1; i <= n; i++){
         string s;
