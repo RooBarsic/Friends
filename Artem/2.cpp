@@ -32,7 +32,7 @@ map<int, long long> dp[12];
  long long geta(int x, int k, int b = 9){
      if((x < 0) || (k <= 0)) return 0;
      if(k == 1)
-         return 9 - x + 1;
+         return b - x + 1;
      long long ans = dp[x][k];
      if(ans > 0)
          return ans;
@@ -41,6 +41,7 @@ map<int, long long> dp[12];
          ans = (ans + kol * geta(i, k - 1)) % pi;
          kol++;
      }
+     dp[x][k] = ans;
      return ans;
  }
  int main(){
