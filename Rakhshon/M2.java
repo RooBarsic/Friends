@@ -1,25 +1,30 @@
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.Scanner;
+import javax.lang.model.type.IntersectionType;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int t = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int t = Integer.parseInt(st.nextToken());
         for(int i = 1; i <= t; i++){
-            int ans = solveProblem(scanner);
+            int ans = solveProblem(br);
             System.out.println(ans);
         }
     }
 
-    public static int solveProblem(Scanner scanner){
-        int n = scanner.nextInt();
+    public static int solveProblem(BufferedReader br) throws IOException {
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
         int[] arr = new int[2010];
-        Hashtable<Integer, Integer> kol = new Hashtable<Integer, Integer>();
+        HashMap<Integer, Integer> kol = new HashMap<>();
+        st = new StringTokenizer(br.readLine());
         for(int i = 1; i <= n; i++){
-            arr[i] = scanner.nextInt();
+            arr[i] = Integer.parseInt(st.nextToken());
             kol.put(arr[i], kol.getOrDefault(arr[i], 0) + 1);
         }
 
