@@ -12,9 +12,12 @@ int find_pred(int v){
     if(pred[v] == v){
         return v;
     }
+    if(pred[pred[v]] == pred[v]){
+        return pred[v];
+    }
     int old_pred = pred[v];
     int new_pred = find_pred(pred[v]);
-    sum[v] = sum[v] + sum[old_pred] - sum[new_pred];
+    sum[v] = sum[v] + sum[old_pred];
     pred[v] = new_pred;
     return new_pred;
 }
@@ -32,7 +35,7 @@ int get_experience(int v){
     if(pred[v] == v){
         return sum[v];
     }
-    return get_experience(pred[v]) + sum[v];
+    return sum[find_pred(v)] + sum[v];
 }
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(NULL); cout.tie(NULL);
