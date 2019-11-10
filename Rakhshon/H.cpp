@@ -12,7 +12,11 @@ int find_pred(int v){
     if(pred[v] == v){
         return v;
     }
-    return find_pred(pred[v]);
+    int old_pred = pred[v];
+    int new_pred = find_pred(pred[v]);
+    sum[v] = sum[v] + sum[old_pred] - sum[new_pred];
+    pred[v] = new_pred;
+    return new_pred;
 }
 void union_ab(int a, int b){
     a = find_pred(a);
@@ -31,6 +35,7 @@ int get_experience(int v){
     return get_experience(pred[v]) + sum[v];
 }
 int main() {
+    ios_base::sync_with_stdio(0); cin.tie(NULL); cout.tie(NULL);
     int m;
     cin >> n >> m;
     build_dsu(n);
