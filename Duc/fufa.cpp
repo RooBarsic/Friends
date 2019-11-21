@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 #define sz(s) int(s.size())
 using namespace std;
-int arr[20010];
-int tmin[4 * 20010], lazy[4 * 20010];
-int tmax[4 * 20010];
+int arr[200100];
+int tmin[4 * 200100], lazy[4 * 200100];
+int tmax[4 * 200100];
 void build_tree(int v, int tl, int tr){
     if(tl == tr){
         tmin[v] = tmax[v] = arr[tl];
