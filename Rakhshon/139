@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int dp[111][111][111];
+int main(){
+	ll n, m, k, p;
+	cin>>n>>m>>k>>p;
+	for(ll a = 0; a <= n; a ++){
+		for(ll b = 0; b <= m; b ++){
+			for(ll c = 0; c <= k; c ++){
+				if(a >= p) dp[a][b][c] = dp[a-p][b][c] + 1;
+				if(a >= p%2 && b >= p/2) dp[a][b][c] = max(dp[a][b][c],dp[a-p%2][b-p/2][c] + 1);
+				if(b < p/2 && a >= (p-b*2)) dp[a][b][c] = max(dp[a][b][c],dp[a-(p-b*2)][0][c]+1); 
+				if(a >= (p/3)%2 && b >= (p/3)/2 && c >= (p/3)) 
+				dp[a][b][c] =  max(dp[a][b][c], dp[a - (p/3)%2][b - (p/3)/2][c - p/3] + 1);
+				if(c < (p/3)){
+					if( a >= ((p-c*3)/2)%2 && b >= ((p-c*3)/3)/2 ) dp[a][b][c] = max(dp[a - ((p-c*3)/3)%2][b - ((p-c*3)/3)/2 ][0] + 1,dp[a][b][c]); 
+					else if(b < (p-c*3) && a >= (p-c*3-b*2)) dp[a][b][c] = max(dp[a][b][c], dp[a-p-c*3-b*2][0][0] + 1); 
+			}
+		}
+		}
+	}
+	for(ll x = 0; x <= n; x ++){
+		for(ll y = 0; y <= m; y ++){
+			for(ll z = 0; z <= k; z ++){
+				cout<<x<<' '<<y<<' '<<z<<' '<<dp[x][y][z]<<endl;
+			}
+		}
+	}
+}
