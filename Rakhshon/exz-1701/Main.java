@@ -8,13 +8,15 @@ public class Main {
     public static void main(String[] args) {
         if(args.length == 1) {
             final String formulasStr = args[0];
-             formulas = parseFormulas(formulasStr);
-
+            formulas = parseFormulas(formulasStr);
+            StringBuilder builder = new StringBuilder();
             for(int i = 0; i < formulas.size(); i++){
                 countFormula(formulas.get(i));
                 //System.out.println(" i = " + i + " formula = " + formulas.get(i).getFormula() + " val = " + formulas.get(i).getValue());
-                System.out.println(formulas.get(i).getValue());
+                builder.append('|');
+                builder.append(formulas.get(i).getStrValue());
             }
+            System.out.println(builder.toString());
         } else {
             System.out.println("Wrong arguments format.");
         }
@@ -107,5 +109,51 @@ public class Main {
             formulas.add(new Formula(formulaBuilder.toString()));
         }
         return formulas;
+    }
+}
+
+
+ class Formula {
+    private final String formula;
+    private boolean isConst = true;
+    private boolean isCalculated = false;
+    private int value = 0;
+
+    public Formula(final String formula) {
+        this.formula = formula;
+        for(int i = 0; i < formula.length(); i++){
+            if(!('0' <= formula.charAt(i) && formula.charAt(i) <= '9')){
+                isConst = false;
+                break;
+            }
+        }
+        if(isConst){
+            value = Integer.parseInt(formula);
+            isCalculated = true;
+        }
+    }
+
+    public boolean isConst(){
+        return isConst;
+    }
+
+    public boolean isCalculated(){
+        return isCalculated;
+    }
+
+    public String getFormula(){
+        return formula;
+    }
+
+    public int getValue(){
+        return value;
+    }
+
+    public String getStrValue(){
+        return Long.toString(value);
+    }
+
+    public void setValue(int value){
+        this.value = value;
     }
 }
