@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -38,10 +37,24 @@ public class Main {
             case "--numeric-sort" :
                 break;
             case "--reverse" :
+                reverse(inputData);
                 break;
             default:
                 System.out.println(" Error. Wrong option! ");
         }
+
+        printData(inputData);
+    }
+
+    public static void printData(final List<String> data){
+        for (String row : data){
+            System.out.println(row);
+        }
+    }
+
+    public static List<String > reverse(final List<String> data){
+        data.sort((a, b) -> -a.compareTo(b));
+        return data;
     }
 
     public static List<String> getData(final String fileName){
