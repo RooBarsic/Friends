@@ -4,10 +4,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        String option, fileName = null;
+        String option = null, fileName = null;
         if(args.length == 0){
             System.out.println(" Error. No option was found ");
             return;
@@ -20,7 +21,7 @@ public class Main {
             System.out.println(" Error. Too many options are given. ");
             return;
         }
-
+        execute(option, fileName);
     }
 
     public static void execute(final String option, final String fileName){
@@ -57,6 +58,7 @@ public class Main {
                 inputData.add(inputLine);
             }
         } catch (FileNotFoundException e) {
+            System.out.println("file with name " + fileName + " was not found.");
             e.printStackTrace();
         } finally {
             if(scanner != null){
