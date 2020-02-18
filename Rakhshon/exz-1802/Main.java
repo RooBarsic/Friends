@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println(dictionaryOrder("A#", "Aa"));
         String option = null, fileName = null;
         if(args.length == 0){
             System.out.println(" Error. No option was found ");
@@ -29,16 +30,20 @@ public class Main {
             case "--ignore-leading-blanks" :
                 break;
             case "--dictionary-order" :
+                inputData.sort(Main::dictionaryOrder);
                 break;
             case "--ignore-case" :
+                inputData.sort(String::compareToIgnoreCase);
                 break;
             case "--ignore-nonprinting":
                 break;
             case "--numeric-sort" :
                 break;
             case "--reverse" :
-                reverse(inputData);
+                inputData.sort((a, b) -> -a.compareTo(b));
                 break;
+            case "--" :
+                inputData.sort(String::compareTo);
             default:
                 System.out.println(" Error. Wrong option! ");
         }
@@ -52,9 +57,43 @@ public class Main {
         }
     }
 
-    public static List<String > reverse(final List<String> data){
-        data.sort((a, b) -> -a.compareTo(b));
-        return data;
+    public static boolean isDictionaryLetter(char a){
+        if((('A' <= a) && (a <= 'Z')) || (('a' <= a) && (a <= 'z')) || (('0' <= a) && (a <= '9'))){
+            return true;
+        }
+        return false;
+    }
+
+    public static int dictionaryOrder(final String a, final String b){
+        int aLeft = 0, bLeft = 0;
+        while((aLeft < a.length()) && (bLeft < b.length())){
+            if(isDictionaryLetter(a.charAt(aLeft)) && isDictionaryLetter(b.charAt(bLeft))) {
+                if (a.charAt(aLeft) < b.charAt(bLeft)) return -1;
+                if (a.charAt(aLeft) > b.charAt(bLeft)) return +1;
+                aLeft++;
+                bLeft++;
+            } else {
+                if(!isDictionaryLetter(a.charAt(aLeft))){
+                    aLeft++;
+                }
+                if(!isDictionaryLetter(b.charAt(bLeft))){
+                    bLeft++;
+                }
+            }
+        }
+        while(aLeft < a.length()){
+            if(isDictionaryLetter(a.charAt(aLeft))){
+                return -1;
+            }
+            aLeft++;
+        }
+        while(bLeft < b.length()){
+            if(isDictionaryLetter(b.charAt(bLeft))){
+                return +1;
+            }
+            bLeft++;
+        }
+        return 0;
     }
 
     public static List<String> getData(final String fileName){
