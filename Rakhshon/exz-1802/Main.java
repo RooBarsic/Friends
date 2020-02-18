@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(dictionaryOrder("A#", "Aa"));
         String option = null, fileName = null;
         if(args.length == 0){
             System.out.println(" Error. No option was found ");
@@ -38,6 +37,7 @@ public class Main {
             case "--ignore-nonprinting":
                 break;
             case "--numeric-sort" :
+                inputData.sort(Main::numericComparing);
                 break;
             case "--reverse" :
                 inputData.sort((a, b) -> -a.compareTo(b));
@@ -55,6 +55,31 @@ public class Main {
         for (String row : data){
             System.out.println(row);
         }
+    }
+
+    public static int numericComparing(final String a, final String b){
+        Long aNum = null;
+        Long bNum = null;
+        try {
+            aNum = Long.parseLong(a);
+            bNum = Long.parseLong(b);
+        } catch (NumberFormatException e){
+        }
+        if(aNum == null){
+            if(bNum != null){
+                return 1;
+            } else {
+                return 0;
+            }
+        } else if(bNum == null){
+            return -1;
+        }
+        if (aNum < bNum) {
+            return -1;
+        } else if (aNum > bNum) {
+            return +1;
+        }
+        return 0;
     }
 
     public static boolean isDictionaryLetter(char a){
