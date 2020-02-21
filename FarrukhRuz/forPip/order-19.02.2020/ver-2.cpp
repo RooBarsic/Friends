@@ -36,9 +36,9 @@
 	  }
   }
   
-  void find_candidates(TreeNode tree, int h = 1){
+  void find_candidates(TreeNode tree, int h = 0){
 	  if(tree == NULL) return;
-	  if(h == (tree_height + 1) / 2){
+	  if(h == tree_height / 2){
 		  if(get_count(tree->leftTree) > get_count(tree->rightTree)){
 			  candidates.push_back(tree->x);
 		  }
@@ -80,7 +80,8 @@
 	}
 	
 	tree_height = count_deep(tree);
-	
+	tree_height--;
+
 	find_candidates(tree);
 	
 	sort(candidates.begin(), candidates.end());
