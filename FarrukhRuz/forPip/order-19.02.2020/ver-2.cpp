@@ -30,7 +30,7 @@
   
   void print_tree(TreeNode tree){
 	  if(tree != NULL){
-		  cout << tree->x << " ";
+		  cout << tree->x << "\n";
 		  print_tree(tree->leftTree);
 		  print_tree(tree->rightTree);
 	  }
@@ -71,7 +71,9 @@
   }
 
   int main(){
-	TreeNode tree = NULL;
+//      freopen("in.txt","r",stdin);
+//      freopen("out.txt","w",stdout);
+    TreeNode tree = NULL;
 	long long x;
 	while(cin >> x){
 		add_node(tree, x);
