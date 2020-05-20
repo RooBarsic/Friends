@@ -1,10 +1,10 @@
-#include<iostream>
+#include<stdio.h>
 
-#define sz(s) int(s.size())
-
+int n, m;
 int arr[1010];
 int brr[1010][1010];
 int crr[1010][1010];
+int drr[1010][1010];
 
 /* для всех чисел от 0 до (m - 1) - находит двоичное представление 
  * и заполняет их в crr. Зполняет именно так как сказано в задаче -
@@ -12,10 +12,10 @@ int crr[1010][1010];
  * мы получаем 0000000011 ( добавляем восемь нулей в начало, всёравно от
  * добавления лидирующих нулей - ничего не изменится ).
  */
-void fill_bits(int m, int n){
-	for(int i = 0; i < m; i++){
+void fill_bits(){
+	for(int i = 1; i <= m; i++){
 		int last = n;
-		int x = i;
+		int x = i - 1;
 		while(x > 0){
 			int ostatok = x % 2;
 			x = x / 2;
@@ -24,19 +24,40 @@ void fill_bits(int m, int n){
 		}
 	}
 }
- 
-int main(){
-	int 
-	cin >> n >> m;
-	for(int i = 1; i <= n; i++){
-		cin >> arr[i];
-	}
-	for(int i = 1; i <= m; i++){
-		for(int j = 1; j <= n; j++){
-			cin >> brr[i][j];
+
+/* Тут умножаем каждое двоичное число от 0 до m-1 - на матрицу brr[m][n] и 
+ * получаем m новыйх матриц размера [1][m]. Так как матрица размера [1][m] -
+ * это массив размера [m] - значит мы получим m новых массивов размера m.
+ * drr[1] - это первый масив размера m
+ * drr[2] - это второй массив размера m
+ * и так далее
+ */
+void mult_numbers(){
+	for(int a = 1; a <= m; a++){
+
+		int i = 1;
+		for(int j = 1; j <= m; j++){
+			for(int k = 1; k <= n; k++){
+				drr[a][j] = (drr[a][j] + crr[i][k] * brr[k][j]) % 2;
+			}
 		}
 	}
-	fill_bits(m, n);
+}
+					
+ 
+int main(){
+	scanf("%d%d", &n, &m);
+	for(int i = 1; i <= n; i++){
+		scanf("%d", &arr[i]);
+	}
+	for(int i = 1; i <= n; i++){
+		for(int j = 1; j <= m; j++){
+			scanf("%d", &brr[i][j]);
+		}
+	}
+	
+	fill_bits();
+	mult_numbers();
 	return 0;
 }
 
